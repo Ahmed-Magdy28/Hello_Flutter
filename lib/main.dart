@@ -12,61 +12,74 @@ class HelloFlutter extends StatelessWidget {
     return MaterialApp(
       title: 'Hello Flutter',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Image(image: AssetImage('assets/images/flutter.png'),
-              width: 40,),
-              SizedBox(width: 8),
-              Text('Hello Flutter'),
-            ],
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.blue,
-        ),
-        body: Container(
-          height: double.infinity,
-          width: double.infinity,
-          color: Colors.blue[200],
-          child:  Center(
-            child: Column(
+          appBar: AppBar(
+            title: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children:  <Widget>[
-                const Text('Welcome to Hello Flutter app', style: TextStyle(fontSize: 24)),
-                const SizedBox(height: 20),
-                Container(
-          alignment: Alignment.center,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children:  <Widget>[
-              const Image(image: AssetImage('assets/images/flutter.png')),
-              const Text('Hello Flutter', style: TextStyle(fontSize: 28)),
-              const SizedBox(height: 20),
-              const Text('code made by Ahmed Magdy', style: TextStyle(fontSize: 12)),
-              Container(
-                height: 90,
-                width: 90,
-                decoration: BoxDecoration(
-                  color: Colors.brown,
-                  borderRadius: BorderRadius.circular(50),
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Image(
+                  image: AssetImage('assets/images/flutter.png'),
+                  width: 50,
+                  height: 50,
                 ),
-                margin: const EdgeInsets.all(20),
-                padding: const EdgeInsets.all(20),
-                child: const Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Text('Hello Flutter', style: TextStyle(color: Colors.white, fontSize: 20)
-                ),
-              )
-          )],
-          ),
-        ),
+                SizedBox(width: 8),
+                Text('Hello Flutter'),
               ],
             ),
-          ))
-        ,
-      ),
+            centerTitle: true,
+            backgroundColor: Colors.blue[800],
+          ),
+          body: Container(
+              height: double.infinity,
+              width: double.infinity,
+              color: Colors.blue[200],
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Column(
+                    children: [
+                      SizedBox(height: 10),
+                      Text(
+                        "Welcome to Hello flutter app!",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  const Column(
+                    children: [
+                      Image(
+                        image: AssetImage('assets/images/flutter.png'),
+                        width: 200,
+                        height: 200,
+                      ),
+                      Text("This code is made by ahmed magdy."),
+                    ],
+                  ),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(10),
+                    alignment: Alignment.bottomLeft,
+                    decoration: BoxDecoration(color: Colors.grey[800], 
+                    borderRadius: BorderRadius.circular(20)),
+                    child: const Row(children: [
+                      Image(
+                          image: AssetImage('assets/images/me.png'),
+                          width: 50,
+                          height: 50),
+                      SizedBox(width: 10),
+                      Column(
+                        children: [
+                          Text("Ahmed Magdy", style: TextStyle(color: Colors.white)),
+                          Text("Software Engineer", style: TextStyle(color: Colors.white)),
+                          Text("ahmedmagdy.tech", style: TextStyle(color: Colors.white)),
+                        ],
+                      ),
+                    ]),
+                  )
+                ],
+              ))),
     );
   }
 }
